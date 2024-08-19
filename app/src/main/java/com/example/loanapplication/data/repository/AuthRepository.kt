@@ -23,8 +23,6 @@ class AuthRepository @Inject constructor(
         val singUp = SingUp(mobile, password, emailId)
         val response = apiService.singUp(singUp)
         return if (response.isSuccessful) {
-            sharedPreferencesUtils.setStingShard(PREFERENCES_KEY_USERNAME, emailId)
-            sharedPreferencesUtils.setStingShard(PREFERENCES_KEY_MOBILE, mobile)
             MyNetworkResult.Success(response.body()!!)
         } else if (response.code() == 400) {
             val gson = Gson()

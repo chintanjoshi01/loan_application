@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.example.loanapplication.R
 import com.example.loanapplication.databinding.FragmentApplyLoanBinding
 import com.example.loanapplication.ui.viewmodel.ApplyLoanViewModel
@@ -17,7 +16,6 @@ class ApplyLoanFragment : Fragment() {
     private lateinit var binding: FragmentApplyLoanBinding
 
     private lateinit var viewModel: ApplyLoanViewModel
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +40,7 @@ class ApplyLoanFragment : Fragment() {
             diAppComponents.getDialogManager().showCustomDialog(
                 "Apply For Loan",
                 message = "Enter your amount and duration",
+                positiveButtonText = "Submit",
                 layout = R.layout.two_fild_coustom_layout,
                 inflater = requireActivity().layoutInflater,
                 context = requireContext(),
