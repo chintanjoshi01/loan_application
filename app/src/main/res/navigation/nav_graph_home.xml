@@ -1,0 +1,40 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/applyLoanFragment">
+
+    <fragment
+        android:id="@+id/applyLoanFragment"
+        android:name="com.example.loanapplication.ui.view.ApplyLoanFragment"
+        android:label="Apply Loan">
+        <action
+            android:id="@+id/action_applyLoanFragment_to_loanHistoryFragment"
+            app:destination="@id/loanHistoryFragment" />
+        <action
+            android:id="@+id/action_applyLoanFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanHistoryFragment"
+        android:name="com.example.loanapplication.ui.view.LoanHistoryFragment"
+        android:label="Loan History">
+        <action
+            android:id="@+id/action_loanHistoryFragment_to_applyLoanFragment"
+            app:destination="@id/applyLoanFragment"
+            app:popUpTo="@id/applyLoanFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loanHistoryFragment_to_profileFragment"  app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.loanapplication.ui.view.ProfileFragment"
+        android:label="Profile">
+        <action
+            android:id="@+id/action_profileFragment_to_applyLoanFragment"
+            app:destination="@id/applyLoanFragment"
+            app:popUpTo="@id/applyLoanFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
